@@ -30,6 +30,7 @@ gem 'table_print'
 gem 'faker'
 gem 'time_difference'
 gem 'rspec-rails'
+gem 'devise'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -62,5 +63,7 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
+
+
 
 
