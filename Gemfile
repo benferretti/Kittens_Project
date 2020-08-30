@@ -31,6 +31,8 @@ gem 'faker'
 gem 'time_difference'
 gem 'rspec-rails'
 gem 'devise'
+gem 'bootstrap'
+gem 'jquery-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
