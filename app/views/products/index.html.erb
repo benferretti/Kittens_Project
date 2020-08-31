@@ -1841,5 +1841,71 @@
       </div> <!-- / .container -->
     </section>
 
+
+    <!--================ View products#show ==============================================-->
+    <!-- CONTENT
+    ================================================== -->
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-12 col-md-5">
+
+          <!-- Images -->
+          <section class="pb-8 pt-md-12 pb-md-10">
+            <%= image_tag "https://images.unsplash.com/photo-1491833485966-73cfb9ccea53?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80", class: "img-fluid rounded card lift lift-lg shadow-light-lg", alt: "..." %>
+          </section>
+        </div>
+
+        <div class="col-12 col-md-5 position-md-sticky d-flex align-items-center vh-md-100" style="top: 0;">
+
+          <!-- Sidebar -->
+          <aside class="py-8 py-md-10">
+
+            <!-- Preheading -->
+            <span class="badge badge-pill badge-primary-soft mb-5">
+              <span class="h6 text-uppercase font-weight-bold">catégorie</span>
+            </span>
+            <a href="#" class="ml-4"><small>Voir d'autres produits similaires</small></a>
+
+            <!-- Text -->
+            <p class="font-size-lg mb-7 text-muted">
+              Ceci est ma super description, parce que j'aime bien décrire les choses. C'est mon côté romantique.
+            </p>
+
+            <!-- List group -->
+            <ul class="list-group list-group-flush mt-5">
+              <li class="list-group-item mt-5">
+
+                <!-- Heading -->
+                <h6 class="d-flex mb-0 text-uppercase">
+                  Catégorie <span class="ml-auto">Catégorie</span>
+                </h6>
+              </li>
+
+              <li class="list-group-item">
+                <!-- Heading -->
+                <h5 class="d-flex mb-3 text-uppercase">
+                  Prix <span class="ml-auto">117 €</span>
+                </h5>
+              </li>
+            </ul>
+
+          <!--Ajouter au panier-->
+          <button class="btn btn-success btn-pill btn-sm mt-5">
+            <small>Au panier !</small>
+          </button>
+          </aside>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SHAPE
+    ================================================== -->
+    <div class="position-relative">
+      <div class="shape shape-bottom shape-fluid-x svg-shim text-light">
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z" fill="currentColor"/></svg>
+      </div>
+    </div>
+
   </body>
 
