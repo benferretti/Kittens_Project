@@ -18,7 +18,8 @@ i = 0
 5.times do
   user = User.create(
     email: user_email_array[i],
-    password: 'Azerty'
+    password: 'Azerty',
+    avatar: "https://static.thenounproject.com/png/55168-200.png"
   )
   i += 1
   puts "Seeding User #{user.email}"

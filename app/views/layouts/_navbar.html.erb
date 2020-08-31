@@ -21,7 +21,7 @@
               Mon profil
             </a>
             <div class="dropdown-menu " aria-labelledby="navbarDropdown-connexion">
-              <%= link_to "Mon profil", root_path, class: "dropdown-item" %>
+              <%= link_to "Mon profil", user_path(current_user.id), class: "dropdown-item" %>
               <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
