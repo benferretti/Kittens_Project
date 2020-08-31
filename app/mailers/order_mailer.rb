@@ -9,7 +9,6 @@ class OrderMailer < ApplicationMailer
 
     # create an array with all products ordered
     @products_ordered = Array.new
-
     Order.find_by(id: @order.id).product_orders.each { |i| (@products_ordered << i.product) }
 
 
