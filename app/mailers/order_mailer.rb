@@ -1,16 +1,17 @@
-class ProductOrderMailer < ApplicationMailer
+class OrderMailer < ApplicationMailer
   default from: 'amaury.desbazeille@gmail.com'
 
-  def product_order_confirmed(product_order)
-    @order = Order.find(product_order.order_id)
+  def order_confirmed(order)
+
+    @order = Order.find(order.id)
     @user = User.find(@order.user_id)
     @url  = 'https://kittens-project-develop.herokuapp.com/'
 
     # create an array with all products ordered
     @products_ordered = Array.new
-    ProductOrder.where(order_id: @order.id).each do |item|
-      @products_ordered << Product.find(item.product_id)
-    end
+
+    Order.find_by(id: @order.id).product_orders.each { |i| (@products_ordered << i.product) }
+
 
     mail(to: @user.email, subject: 'Confirmation de votre commande')
   end

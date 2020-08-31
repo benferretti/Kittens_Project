@@ -1,9 +1,9 @@
-<h1>Bonjour <%= @user.first_name %> !</h1>
+<h1>Bonjour <%= @user.email %> !</h1>
 <ul>
   Nous avons bien reçu ta commande dont voici le récapitulatif :
   <ol>
     <% @products_ordered.each do |item| %>
-      <li><%= item.name %></li>
+      <li><%= item.name %> : <%= item.price %> €</li>
     <% end %>
   </ol>
 </ul>
