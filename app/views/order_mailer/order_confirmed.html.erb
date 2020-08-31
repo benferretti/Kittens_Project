@@ -1,17 +1,16 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
-    <h1>Bonjour <%= @user.first_name %> !</h1>
-    <ul>
-      Nous avons bien reçu ta commande dont voici le récapitulatif :
+<h1>Bonjour <%= @user.first_name %> !</h1>
+<ul>
+  Nous avons bien reçu ta commande dont voici le récapitulatif :
+  <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
 
-    </ul>
-    <p>
-      Un grand merci pour ces achats !
-    </p>
-    <p> À bientôt sur <%= @url %>!
-  </body>
-</html>
+</ul>
+<p>
+  Un grand merci pour ces achats !
+</p>
