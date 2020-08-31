@@ -1,7 +1,11 @@
 <h1>Bonjour <%= @user.first_name %> !</h1>
 <ul>
   Nous avons bien reçu ta commande dont voici le récapitulatif :
-
+  <ol>
+    <% @products_ordered.each do |item| %>
+      <li><%= item.name %></li>
+    <% end %>
+  </ol>
 </ul>
 <p>
   Un grand merci pour ces achats !
