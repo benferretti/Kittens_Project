@@ -32,6 +32,11 @@
           </div>
 
           <div class="form-group mb-5">
+            <%= f.label "Avatar" %><br />
+            <%= f.text_field :avatar, autocomplete: "avatar", class: "form-control" %>
+          </div>
+
+          <div class="form-group mb-5">
             <%= f.label "Mot de passe" %><em><% if @minimum_password_length %><%= " (#{@minimum_password_length} caractères minimum)" %><%end%></em><br />
             <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
             
