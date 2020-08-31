@@ -7,8 +7,8 @@ class OrderMailer < ApplicationMailer
 
     # TO DO : create an array with all products ordered
     @products_ordered = Array.new
-    ProductOrder.find_by(order_id: order.id)
-
+    test = ProductOrder.find_by(order_id: (order.id -1))
+    puts test
     mail(to: @user.email, subject: 'Confirmation de votre commande')
   end
 end
