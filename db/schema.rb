@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_08_31_163748) do
 
   # These are extensions that must be enabled in order to support this database
@@ -40,7 +41,7 @@ ActiveRecord::Schema.define(version: 2020_08_31_163748) do
     t.bigint "cart_id"
     t.bigint "product_id"
     t.integer "quantity"
-    t.float "total_price"
+    t.integer "total_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cart_id"], name: "index_product_carts_on_cart_id"
@@ -51,7 +52,7 @@ ActiveRecord::Schema.define(version: 2020_08_31_163748) do
     t.bigint "order_id"
     t.bigint "product_id"
     t.integer "quantity"
-    t.float "total_price"
+    t.integer "total_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["order_id"], name: "index_product_orders_on_order_id"
