@@ -22,9 +22,9 @@
             </p>
             <nav class="nav justify-content-center">
             <% @categories.each do |category| %>
-              <a class="badge badge-pill badge-white-soft mr-1 mb-1" href="#" data-toggle="pill" data-filter=".product" data-target="#portfolio">
+              <span class="badge badge-pill badge-white-soft mr-1 mb-1" href="#" data-toggle="pill" data-filter=".product" data-target="#portfolio">
                 <span class="h6 text-uppercase"><%= category.name %></span>
-              </a>
+              </span>
             <% end %>
             </nav>
             
