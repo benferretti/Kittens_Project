@@ -33,6 +33,10 @@ gem 'rspec-rails'
 gem 'devise'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'dotenv-rails'
+gem 'letter_opener'
+
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -65,7 +69,3 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
-
-
-
-
