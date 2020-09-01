@@ -1,0 +1,105 @@
+
+    <!-- HEADER
+    ================================================== -->
+    <header class="bg-dark pt-9 pb-11 d-none d-md-block">
+      <div class="container-md">
+        <div class="row align-items-center">
+          <div class="col">
+
+            <!-- Heading -->
+            <h1 class="font-weight-bold text-white mb-2">
+              Mon panier
+            </h1>
+
+            <!-- Text -->
+            <p class="font-size-lg text-white-75 mb-0">
+              Consulter mes achats
+            </p>
+
+          </div>
+          <div class="col-auto">
+
+            <!-- Button -->
+            
+            <%= link_to "Reprendre mes achats", products_path, class: "btn btn-sm btn-gray-300-20" %>
+
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </header>
+
+<!--Cart-->
+<div class="container">
+	<table id="cart" class="table table-hover table-condensed">
+    <thead>
+      <tr>
+        <th style="width:50%">Produit</th>
+        <th style="width:8%">Quantité</th>
+        <th style="width:22%" class="text-center">Prix total</th>
+        <th style="width:20%"></th>
+      </tr>
+    </thead>
+
+    <% @productcart.each do |cart| %>
+    <tbody>
+      <tr>
+        <td data-th="Product">
+          <div class="row">
+            <!-- Card -->
+            <a class="card shadow-light-lg" href="#!">
+              <!-- Badge -->
+              <span class="badge badge-lg badge-success badge-pill badge-float badge-float-outside">
+                <%= cart.product.price  %> €
+              </span>
+              <!-- Image -->
+              <div class="card-zoom">
+                <%= image_tag cart.product.url, class: "card-img", alt: "..."%>
+              </div>
+
+              <!-- Overlay -->
+              <div class="card-img-overlay card-img-overlay-hover">
+                <div class="card-body bg-white">
+
+              <!-- Preheading -->
+                    <span class="badge badge-pill badge-primary-soft mb-2">
+                      <span class="h6 text-uppercase font-weight-bold"><%= cart.product.category.name%></span>
+                    </span>
+                    <hr>
+
+              <p class="mb-0 text-muted">
+                <h3> <%= cart.product.name %> </h3>
+                <small>
+                  <%= cart.product.description %>
+                </small>
+              </p>
+
+                </div>
+              </div>
+
+            </a>
+          </div>
+        </td>
+        <td data-th="Quantity" class="text-center">
+          <%= cart.quantity %>
+        </td>
+        <td data-th="Subtotal" class="text-center"><%= cart.product.price %> €</td>
+        <td class="actions" data-th="">
+          <%= link_to  product_path(cart.product.id), class:"btn btn-rounded-circle btn-primary btn-sm", title: "Voir plus"  do %>
+            <% image_tag "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn1.iconfinder.com%2Fdata%2Ficons%2Ftrycons%2F32%2Fsearch-512.png&f=1&nofb=1" %>
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
+    <% end %>
+    
+    <tfoot>
+      <tr>
+        <td class="text-center"><strong>Total : <%= @total_price %> €</strong></td>
+        <td colspan="2" class="hidden-xs"></td>
+        <td><button class="btn btn-success btn-pill btn-sm" title= "Passer ma commande">
+          Payer
+        </button></td>
+      </tr>
+    </tfoot>
+	</table>
+</div>
