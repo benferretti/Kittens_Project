@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :kituis, only: [:index]
   resources :products, only: [:show, :index]
   resources :users, only: [:show]
+  resources :static_pages, only: [:index]
 end
