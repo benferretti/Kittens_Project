@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   
   root 'products#index'
+  
+  devise_for :users
 
   resources :kituis, only: [:index]
- 
-  devise_for :users
+  resources :products, only: [:show, :index]
+  resources :users, only: [:show]
 end

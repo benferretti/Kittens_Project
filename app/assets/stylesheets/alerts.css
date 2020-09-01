@@ -25,3 +25,7 @@
   color: #ffffff;
   text-align: left;
 }
+
+.alert {
+  z-index: 1
+}
