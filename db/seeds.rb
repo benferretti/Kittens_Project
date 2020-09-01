@@ -18,7 +18,8 @@ i = 0
 5.times do
   user = User.create(
     email: user_email_array[i],
-    password: 'Azerty'
+    password: 'Azerty',
+    avatar: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn1.iconfinder.com%2Fdata%2Ficons%2Fui-set-6%2F100%2FQuestion_Mark-512.png&f=1&nofb=1"
   )
   i += 1
   puts "Seeding User #{user.email}"
