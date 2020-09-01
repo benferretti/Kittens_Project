@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>KittensProject</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Theme CSS -->
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-  </head>
+<head>
+  <title>KittensProject</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Theme CSS -->
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+</head>
 
-  <body>
-    <%= render 'layouts/navbar' %>
-    <%= render 'layouts/flash' %>
+<body>
+  <%= render 'layouts/navbar' %>
+  <%= render 'layouts/flash' %>
 
 
-    <%= yield %>
-    <!-- Map -->
-    <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
-    <!-- Theme JS -->
-    <%= javascript_include_tag 'application' %>
-  </body>
+  <%= yield %>
+  <%= render 'layouts/footer' %>
+
+  <!-- Map -->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+  <!-- Theme JS -->
+  <%= javascript_include_tag 'application' %>
+</body>
 </html>
