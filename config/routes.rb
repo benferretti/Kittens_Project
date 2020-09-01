@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :products, only: [:show, :index]
   resources :users, only: [:show]
   resources :static_pages, only: [:index]
+  resources :carts, only: [:show]
 end
