@@ -54,9 +54,7 @@
             </ul>
 
           <!--Ajouter au panier-->
-          <button class="btn btn-success btn-pill btn-sm mt-5">
-            <small>Au panier !</small>
-          </button>
+          <%= link_to "Au panier", product_carts_path(product_id: @product.id), method: :post, class: 'btn btn-success btn-pill btn-sm ml-2 mr-3 text-light' %>
           </aside>
 
         </div>
