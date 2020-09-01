@@ -55,7 +55,7 @@
 
                 <% @products.each do |product| %>
 
-                <div class="col-12 col-md-4 ux">
+                <div class="col-12 col-md-6 col-lg-4 ux">
 
                   <!-- Card -->
                   <div class="card shadow-light-lg mb-7">
@@ -90,14 +90,8 @@
                           <hr>
                           <p class="h5 text-uppercase text-muted mb-2 ml-auto">
                             <%= product.price %> €
-                            <button class="btn btn-success btn-pill btn-sm ml-2 mr-3">
-                              <small>Au panier !</small>
-                            </button>
-                            <%= link_to product_path(product.id), {:style=>'color:#FFFFFF;'} do %>
-                            <button class="btn btn-xs btn-rounded-circle btn-primary ml-5" alt="..." title="Voir plus">
-                            +
-                            </button>
-                            <%end%>
+                            <%= link_to "Au panier", product_carts_path(product_id: product.id), method: :post, class: 'btn btn-success btn-pill btn-sm ml-2 mr-3 text-light' %>
+                            <%= link_to "+", product_path(product.id), class: "btn btn-xs btn-rounded-circle btn-secondary ml-5", title: "Voir plus" %>
                           </p>
                       </div>
                     </div>

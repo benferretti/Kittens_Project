@@ -15,6 +15,9 @@
         <li class="nav-item">
           <%= link_to "Accueil", root_path, :class => "nav-link" %>
         </li>
+        <li class="nav-item">
+          <%= link_to "À propos", static_pages_path, :class => "nav-link" %>
+        </li>
         <% if user_signed_in? %>
           <li class="nav-item dropdown ">
             <a class="nav-link dropdown-toggle " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -37,9 +40,14 @@
             </div>
           </li>
         <% end %>
-        <li class="nav-item">
-          <%= link_to "À propos", static_pages_path, :class => "nav-link" %>
+        <% if user_signed_in? %>
+        <li class="nav-item justify-content-end">
+          <%= link_to user_cart_path(user_id: current_user.id, id: Cart.where(user_id: current_user.id).last), :class => "nav-link" do %>
+            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i> 
+            Mon Panier
+          <% end %>
         </li>
+        <% end %>
       </ul>
     </div>
   </nav>
