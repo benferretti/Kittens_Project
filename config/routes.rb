@@ -4,12 +4,16 @@ Rails.application.routes.draw do
   
   devise_for :users
 
-  resources :kituis, only: [:index]
-  resources :products, only: [:show, :index]
-  resources :users, only: [:show]
-
-  resources :carts, only: [:show]
-
   resources :static_pages, only: [:index]
+  resources :kituis, only: [:index]
+
+  resources :products, only: [:show, :index]
+  
+  resources :users, only: [:show] do
+    resources :carts, only: [:show]
+  end
+  
+  resources :product_carts, only: [:new, :create, :destroy]
+  
 
 end

@@ -5,17 +5,11 @@ class CartsController < ApplicationController
   def show
     @cart = Cart.find(params[:id])
 
-    @products_cart = ProductCart.where(cart_id: params[:id])
+    @productcart = ProductCart.where(cart_id: params[:id])
     
     @total_price = 0
-    @products_cart.each do |product_cart|
-      @total = product_cart.product.price  + @total_price
-    end
-  end
-
-  def create 
-    if authenticate_user!
-      Cart.create(user_id: current_user.id)
+    @productcart.each do |productcart|
+      @total_price = productcart.product.price  + @total_price
     end
   end
 
