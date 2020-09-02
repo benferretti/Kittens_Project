@@ -12,9 +12,12 @@ Rails.application.routes.draw do
   
   resources :users, only: [:show] do
     resources :carts, only: [:show]
+    resources :carts, only: [:show] do 
+      resources :charges, only: [:new, :create]
+    end
   end
   
   resources :product_carts, only: [:new, :create, :destroy]
   
-
+  
 end
