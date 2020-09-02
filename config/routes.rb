@@ -4,20 +4,19 @@ Rails.application.routes.draw do
   
   devise_for :users
 
-  resources :static_pages, only: [:index]
+  resources :static_pages, only: [:index], path: 'equipe'
   resources :kituis, only: [:index]
 
-  resources :products, only: [:show, :index]
-  resources :categories, only: [:show]
+  resources :products, only: [:show, :index], path: 'articles', param: :slug
+  resources :categories, only: [:show], path: 'categorie'
   
-  resources :users, only: [:show] do
-    resources :carts, only: [:show]
-    resources :carts, only: [:show] do 
-      resources :charges, only: [:new, :create]
+  resources :users, only: [:show], path: 'utilisateur' do
+    resources :carts, only: [:show], path: 'panier' do 
+      resources :charges, only: [:new, :create], path: 'paiement'
     end
   end
   
-  resources :product_carts, only: [:new, :create, :destroy]
+  resources :product_carts, only: [:new, :create, :destroy], path: 'contenu-panier'
   
   
 end
