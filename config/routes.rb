@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :static_pages, only: [:index], path: 'equipe'
   resources :kituis, only: [:index]
 
-  resources :products, only: [:show, :index], path: 'articles', param: :slug
+  resources :products, only: [:show, :index], path: 'articles'
   resources :categories, only: [:show], path: 'categorie'
   
   resources :users, only: [:show], path: 'utilisateur' do
