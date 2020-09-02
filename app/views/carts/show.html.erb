@@ -100,7 +100,7 @@
         <td class="text-center"><strong>Total : <%= @total_price %> €</strong></td>
         <td colspan="2" class="hidden-xs"></td>
         <td><button class="btn btn-success btn-pill btn-sm" title= "Passer ma commande">
-          Payer
+          <%= link_to "Payer", new_user_cart_charge_path(user_id: params[:user_id],cart_id: params[:id]), :class => "btn btn-success btn-pill btn-sm"  %>
         </button></td>
       </tr>
     </tfoot>

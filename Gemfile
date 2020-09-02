@@ -33,6 +33,8 @@ gem 'rspec-rails'
 gem 'devise'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'stripe'
+gem 'dotenv-rails', groups: [:development, :test]
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
