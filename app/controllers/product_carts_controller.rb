@@ -16,9 +16,17 @@ class ProductCartsController < ApplicationController
       quantity: 1
     )
     if @productcart.save
-      flash.now[:success] = "La carte de #{@product.name} a bien été ajoutée à ton panier ! "
+      flash[:success] = "La carte de #{@product.name} a bien été ajoutée à ton panier ! "
     else 
-      flash.now[:error] = "Nous n'avons pas pu ajouter cette carte à ton panier."
+      flash[:error] = "Nous n'avons pas pu ajouter cette carte à ton panier."
+    end
+  end
+
+  def destroy
+    @productcart = ProductCart.find(params[:cart_id])
+    if @productcart.destroy
+      flash[:success] = "Cette carte a bien été supprimée"
+      redirect_to user_cart_path(Cart.find_by(user_id: current_user.id))
     end
   end
 end

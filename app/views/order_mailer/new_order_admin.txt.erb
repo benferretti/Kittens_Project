@@ -1,8 +1,8 @@
-Bonjour <%= @user.email %> !
+Bonjour <%= @admin.email %> !
 
 ---------------------------------------------------------------------
 
-Nous avons bien reçu ta commande dont voici le récapitulatif :
+Le client <%= @user.email %> vient de passer la commande suivante :
 
     <% @products_ordered.each do |item| %>
       <%= item.name %> : <%= item.price %> €
@@ -10,4 +10,4 @@ Nous avons bien reçu ta commande dont voici le récapitulatif :
 
 ---------------------------------------------------------------------
 
-Un grand merci pour ces achats !
+Encore un gros pigeon !

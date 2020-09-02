@@ -8,12 +8,16 @@ Rails.application.routes.draw do
   resources :kituis, only: [:index]
 
   resources :products, only: [:show, :index]
+  resources :categories, only: [:show]
   
   resources :users, only: [:show] do
     resources :carts, only: [:show]
+    resources :carts, only: [:show] do 
+      resources :charges, only: [:new, :create]
+    end
   end
   
   resources :product_carts, only: [:new, :create, :destroy]
   
-
+  
 end

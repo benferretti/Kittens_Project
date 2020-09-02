@@ -16,6 +16,7 @@ class Order < ApplicationRecord
 
   def order_confirmed
     OrderMailer.order_confirmed(self).deliver_now
+    OrderMailer.new_order_admin(self).deliver_now
   end
 
 end

@@ -17,9 +17,9 @@
           <aside class="py-8 py-md-10">
 
             <!-- Preheading -->
-            <span class="badge badge-pill badge-primary-soft mb-5">
+            <%= link_to category_path(@product.category.id), class: "badge badge-pill badge-primary-soft mb-2" do %>
               <span class="h6 text-uppercase font-weight-bold"><%= @product.category.name %></span>
-            </span>
+            <%end%>
 
             <!-- Text -->
             <p class="font-size-lg mb-7 text-muted">
@@ -54,9 +54,7 @@
             </ul>
 
           <!--Ajouter au panier-->
-          <button class="btn btn-success btn-pill btn-sm mt-5">
-            <small>Au panier !</small>
-          </button>
+          <%= link_to "Au panier !", product_carts_path(product_id: @product.id), method: :post, class: 'btn btn-success btn-pill btn-sm ml-2 mr-3 mt-5 text-light' %>
           </aside>
 
         </div>

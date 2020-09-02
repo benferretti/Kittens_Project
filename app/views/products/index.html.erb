@@ -22,9 +22,9 @@
             </p>
             <nav class="nav justify-content-center">
             <% @categories.each do |category| %>
-              <span class="badge badge-pill badge-white-soft mr-1 mb-1" href="#" data-toggle="pill" data-filter=".product" data-target="#portfolio">
+              <%=link_to category_path(category.id), class: "badge badge-pill badge-white-soft mr-1 mb-1" do%>
                 <span class="h6 text-uppercase"><%= category.name %></span>
-              </span>
+              <%end%>
             <% end %>
             </nav>
 
@@ -74,9 +74,9 @@
                         </div>
 
                         <!-- Preheading -->
-                          <span class="badge badge-pill badge-primary-soft mb-2">
+                          <%= link_to category_path(product.category.id), class: "badge badge-pill badge-primary-soft mb-2" do %>
                             <span class="h6 text-uppercase font-weight-bold"><%= product.category.name %></span>
-                          </span>
+                          <%end%>
                           <hr>
                           <!-- Text -->
                           <p class="mb-0 text-muted">
@@ -90,8 +90,14 @@
                           <hr>
                           <p class="h5 text-uppercase text-muted mb-2 ml-auto">
                             <%= product.price %> €
-                            <%= link_to "Au panier", product_carts_path(product_id: product.id), method: :post, class: 'btn btn-success btn-pill btn-sm ml-2 mr-3 text-light' %>
-                            <%= link_to "+", product_path(product.id), class: "btn btn-xs btn-rounded-circle btn-secondary ml-5", title: "Voir plus" %>
+                            <small>
+                              <%= link_to "Au panier !", product_carts_path(product_id: product.id), method: :post, class: 'btn btn-success btn-pill btn-sm ml-2 mr-3 text-light' %>
+                            </small>
+                            <small>
+                              <%= link_to product_path(product.id), class: "btn btn-xs btn-rounded-circle btn-secondary ml-3", title: "Voir plus" do %>
+                                <%= image_tag "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn1.iconfinder.com%2Fdata%2Ficons%2Ftrycons%2F32%2Fsearch-512.png&f=1&nofb=1"%>
+                              <%end%>
+                            </small>
                           </p>
                       </div>
                     </div>
