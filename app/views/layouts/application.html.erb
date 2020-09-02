@@ -18,8 +18,11 @@
 
 
   <%= yield %>
-  <%= render 'layouts/footer' %>
 
+  <% unless controller_name == "sessions" || controller_name == "registrations" || controller_name == "passwords" %>
+    <%= render 'layouts/footer' %>
+  <% end %>
+  
   <!-- Map -->
   <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
   <!-- Theme JS -->
