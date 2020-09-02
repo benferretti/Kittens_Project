@@ -15,7 +15,18 @@ __Without an account you can:__
 * Sort cards by catagories
 * Check our UI kit with the link in the footer.
 * See two pictures of wonderful cats in the "Toujours plus de photos" footer's section  
+* Obviously create an account and connect to it
 
 __With an account you can:__
+* Still do the same you could do without an account
+* Access to your profile page
+* Edit your profile (first & last name, picture, email, password)
+* Place a product in your cart
+* Place several products in your cart, but not at once
+* Access to the cart
+* Remove a product from your cart
+* Pay your order (what you have in your cart)
+* Check your previous
 
-<img src="https://media.tenor.com/images/bb33cc1eaafa266ac1092ecff7c1c85d/tenor.gif" >
+
+<img src="https://media.tenor.com/images/bb33cc1eaafa266ac1092ecff7c1c85d/tenor.gif">
