@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   
   def show
     @user = current_user
+    @products = ProductOrder.where(order: Order.where(user: current_user))
   end
 
   private 

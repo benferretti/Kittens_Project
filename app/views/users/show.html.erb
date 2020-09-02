@@ -92,7 +92,7 @@
                       <%= link_to "Géneral", user_path(:id => current_user.id), class: "list-link text-reset" %>
                     </li>
                     <li class="list-item">
-                      <a class="list-link text-reset" href="account-notifications.html">
+                      <a class="list-link text-reset" href="#">
                         Mes commandes
                       </a>
                     </li>
@@ -115,6 +115,9 @@
                 <h4 class="mb-0">
                   Informations
                 </h4>
+                <%= button_to edit_user_registration_path, :method => "get", class: "btn btn-sm btn-rounded-circle btn-secondary btn-outline-light mt-1" do %>
+                  <%= image_tag "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn3.iconfinder.com%2Fdata%2Ficons%2Fedition%2F100%2Fpen_paper_2-512.png&f=1&nofb=1", title: "Modifier mes informations"%>
+                <%end%>
 
               </div>
               <div class="card-body">
@@ -145,9 +148,6 @@
                         <h6 class="d-flex mb-3 text-uppercase">
                           Email <span class="ml-auto"><%= current_user.email %></span>
                         </h6>
-                        <%= button_to edit_user_registration_path, :method => "get", class: "btn btn-sm btn-rounded-circle btn-secondary btn-outline-light mt-1" do %>
-                            <%= image_tag "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn3.iconfinder.com%2Fdata%2Ficons%2Fedition%2F100%2Fpen_paper_2-512.png&f=1&nofb=1", title: "Modifier mes informations"%>
-                        <%end%>
                       </li>
                     </ul>
 
@@ -203,6 +203,109 @@
         </div> <!-- / .row -->
       </div> <!-- / .container -->
     </main>
+
+    <!-- ARTICLES
+    ================================================== -->
+    <section class="pt-7 pt-md-10">
+      <div class="container">
+      <hr>
+        <div class="row align-items-center mb-5">
+          <div class="col-12 col-md">
+            
+            <!-- Heading -->
+            <h3 class="mb-0">
+              Mes commandes
+            </h3>
+
+            <!-- Text -->
+            <p class="mb-0 text-muted">
+              Parcourir mes achats
+            </p>
+
+          </div>
+
+        </div> <!-- / .row -->
+        <div class="row">
+          <div class="col-12">
+            
+            <!-- Card -->
+            <div class="card card-row shadow-light-lg mb-6 rounded card lift lift-lg">
+              <div class="row no-gutters">
+                <div class="col-12 col-md-6">
+
+                  <!-- Slider -->
+                  <div class="card-img-slider" data-flickity='{"fade": true, "imagesLoaded": true, "pageDots": false, "prevNextButtons": false, "asNavFor": "#blogSlider", "draggable": false}'>
+                    <%@products.each do |product|%>
+                    <a class="card-img-left bg-cover" style="background-image: url(<%=product.product.url%>);" href="#!">
+                    </a>
+                    <%end%>
+                  </div>
+
+                  <!-- Shape -->
+                  <div class="shape shape-right shape-fluid-y svg-shim text-white d-none d-md-block">
+                    <svg viewBox="0 0 112 690" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M116 0H51v172C76 384 0 517 0 517v173h116V0z" fill="currentColor"/></svg>
+                  </div>
+
+                </div>
+                <div class="col-12 col-md-6 position-static">
+
+                  <!-- Slider -->
+                  <div class="position-static" data-flickity='{"wrapAround": true, "pageDots": false, "imagesLoaded": true, "adaptiveHeight": true}' id="blogSlider">
+                    <%@products.each do |product|%>
+                    <div class="w-100">
+                      <!-- List group -->
+                      <ul class="list-group list-group-flush mt-5">
+                        
+                        <li class="list-group-item m-4">
+                          <!-- Heading -->
+                          <h5 class="d-flex mb-3 text-uppercase">
+                            Commande n°<%=product.id%> <span class="ml-auto"><em><%=product.created_at.strftime("%d/%m/%Y")%></em></span>
+                          </h5>
+                        </li>
+                        
+                        <li class="list-group-item m-4">
+
+                          <!-- Heading -->
+                          <h6 class="d-flex mb-0 text-uppercase">
+                            Nom du produit <span class="ml-auto"><%=product.product.name%></span>
+                          </h6>
+                        </li>
+
+                        <li class="list-group-item m-4">
+
+                          <!-- Heading -->
+                          <h6 class="d-flex mb-0 text-uppercase">
+                            Catégorie <span class="ml-auto"><%=product.product.category.name%></span>
+                          </h6>
+                        </li>
+
+                        <li class="list-group-item m-4">
+
+                          <!-- Heading -->
+                          <h6 class="d-flex mb-0 text-uppercase">
+                            Quantité <span class="ml-auto mr-5"><%=product.quantity%></span>
+                          </h6>
+                        </li>
+
+                        <li class="list-group-item m-4">
+                          <!-- Heading -->
+                          <h5 class="d-flex mb-3 text-uppercase">
+                            Prix <span class="ml-auto"><%=product.total_price%> €</span>
+                          </h5>
+                        </li>
+                      </ul>
+                    </div>
+                    <%end%>
+                  </div>
+
+                </div>
+              </div> <!-- / .row -->
+            </div>
+
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </section>
 
     <!-- CURVE
     ================================================== -->
