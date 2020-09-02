@@ -2,7 +2,7 @@
 
 
 ## Presentation
-: We are a team composed of five loving cats members : Amaury, Juliet, Julien, Benoit and Benjamin.
-: The point of this website was to complete our first group project for a [bootcamp](https://www.thehackingproject.org/)
+We are a team composed of five loving cats members : Amaury, Juliet, Julien, Benoit and Benjamin.  
+The point of this website was to complete our first group project for a [bootcamp](https://www.thehackingproject.org/)
 
 Our website on [heroku](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
