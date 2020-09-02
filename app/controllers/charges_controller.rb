@@ -41,7 +41,6 @@ class ChargesController < ApplicationController
     
     Order.find(order.id).update(stripe_customer_id: customer.id)
     redirect_to user_path(@current_user)
-    @cart.productcart.destroy_all
     
   rescue Stripe::CardError => e
     flash[:error] = e.message
