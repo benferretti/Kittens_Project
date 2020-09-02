@@ -26,7 +26,10 @@ __With an account you can:__
 * Access to the cart
 * Remove a product from your cart
 * Pay your order (what you have in your cart)
-* Check your previous
+* Check your previous orders
+* Disconnect
 
+__As an admin you can__
+* Check on your profile what's been bought until now
 
 <img src="https://media.tenor.com/images/bb33cc1eaafa266ac1092ecff7c1c85d/tenor.gif">
