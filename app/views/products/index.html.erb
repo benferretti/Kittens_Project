@@ -79,25 +79,21 @@
                           </span>
                           <hr>
                           <!-- Text -->
-                          <p class="mb-0 text-muted">
+                          <div class="mb-0 text-muted">
                             <h3><%=product.name %></h3>
                             <small>
                               <%= product.description %>
                             </small>
-                          </p>
+                          </div>
 
                         <!-- Ajouter au panier -->
                           <hr>
                           <p class="h5 text-uppercase text-muted mb-2 ml-auto">
                             <%= product.price %> €
-                            <small>
-                              <%= link_to "Au panier !", product_carts_path(product_id: product.id), method: :post, class: 'btn btn-success btn-pill btn-sm ml-2 mr-3 text-light' %>
-                            </small>
-                            <small>
+                              <%= link_to "Au panier !", product_carts_path(product_id: product.id), method: :post, class: 'btn btn-success btn-pill btn-sm ml-2 mr-3 text-light', remote: true %>
                               <%= link_to product_path(product.id), class: "btn btn-xs btn-rounded-circle btn-secondary ml-3", title: "Voir plus" do %>
                                 <%= image_tag "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn1.iconfinder.com%2Fdata%2Ficons%2Ftrycons%2F32%2Fsearch-512.png&f=1&nofb=1"%>
                               <%end%>
-                            </small>
                           </p>
                       </div>
                     </div>

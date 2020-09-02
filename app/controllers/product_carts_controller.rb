@@ -15,11 +15,25 @@ class ProductCartsController < ApplicationController
       total_price: @product.price,
       quantity: 1
     )
-    if @productcart.save
-      flash[:success] = "La carte de #{@product.name} a bien été ajoutée à ton panier ! "
-    else 
-      flash[:error] = "Nous n'avons pas pu ajouter cette carte à ton panier."
+
+    respond_to do |format|
+      format.html {
+        if @productcart.save
+          flash[:success] = "La carte de #{@product.name} a bien été ajoutée à ton panier ! "
+        else
+          flash[:error] = "Nous n'avons pas pu ajouter cette carte à ton panier."
+        end
+      }
+
+      format.js {
+        if @productcart.save
+          flash[:success] = "La carte de #{@product.name} a bien été ajoutée à ton panier ! "
+        else
+          flash[:error] = "Nous n'avons pas pu ajouter cette carte à ton panier."
+        end
+      }
     end
+
   end
 
   def destroy

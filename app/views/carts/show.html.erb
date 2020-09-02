@@ -20,7 +20,7 @@
           <div class="col-auto">
 
             <!-- Button -->
-            
+
             <%= link_to "Reprendre mes achats", products_path, class: "btn btn-sm btn-gray-300-20" %>
 
           </div>
@@ -66,12 +66,12 @@
                     </span>
                     <hr>
 
-              <p class="mb-0 text-muted">
+              <div class="mb-0 text-muted">
                 <h3> <%= cart.product.name %> </h3>
                 <small>
                   <%= cart.product.description %>
                 </small>
-              </p>
+              </div>
 
                 </div>
               </div>
@@ -94,7 +94,7 @@
       </tr>
     </tbody>
     <% end %>
-    
+
     <tfoot>
       <tr>
         <td class="text-center"><strong>Total : <%= @total_price %> €</strong></td>
