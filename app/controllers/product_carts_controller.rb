@@ -18,19 +18,11 @@ class ProductCartsController < ApplicationController
 
     respond_to do |format|
       format.html {
-        if @productcart.save
-          flash[:success] = "La carte de #{@product.name} a bien été ajoutée à ton panier ! "
-        else
-          flash[:error] = "Nous n'avons pas pu ajouter cette carte à ton panier."
-        end
+        @productcart.save
       }
 
       format.js {
-        if @productcart.save
-          flash[:success] = "La carte de #{@product.name} a bien été ajoutée à ton panier ! "
-        else
-          flash[:error] = "Nous n'avons pas pu ajouter cette carte à ton panier."
-        end
+        @productcart.save
       }
     end
 
