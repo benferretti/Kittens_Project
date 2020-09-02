@@ -41,6 +41,7 @@ class ChargesController < ApplicationController
     
     Order.find(order.id).update(stripe_customer_id: customer.id)
     @user_cart = ProductCart.where(cart: Cart.where(user: @current_user))
+    puts @user_cart
     @user_cart.each {|product| Product.find(product.id).destroy}
     redirect_to user_path(@current_user)
   rescue Stripe::CardError => e
