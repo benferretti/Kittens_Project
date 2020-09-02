@@ -19,7 +19,7 @@ class ChargesController < ApplicationController
     end
     @amount = @total_price * 100
     
-    current_user = User.find(params[:user_id])
+    @current_user = User.find(params[:user_id])
     order = Order.create(user_id: current_user.id)
     @productcart = ProductCart.where(cart_id: params[:cart_id])
     @productcart.each do |productcart|
@@ -40,13 +40,10 @@ class ChargesController < ApplicationController
     })
     
     Order.find(order.id).update(stripe_customer_id: customer.id)
-    
+    redirect_to user_path(@current_user)
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path
   end
   
-
-  
-
 end
