@@ -214,7 +214,11 @@
 
             <!-- Heading -->
             <h3 class="mb-0">
-              Mes commandes
+              <%if current_user.is_admin%>
+                Toutes les commandes
+              <%else%>
+                Mes commandes
+              <%end%>
             </h3>
 
             <!-- Text -->
