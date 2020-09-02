@@ -16,14 +16,22 @@
             </p>
 
             <!-- Badges -->
-            <hr class="border-gray-300 my-6">
+            <hr class="border-gray-300 my-6">   
             <p class="text-white-75 mt-5">
-              Parcourir les catégories:
+              Produits de la catégorie:
+            </p>         
+            <%=link_to category_path(@category.id), class: "badge badge-pill badge-white-soft mr-1 mb-1" do%>
+              <span class="h6 text-uppercase"><%= @category.name %></span>
+            <%end%>
+            <p class="text-white-75 mt-5">
+              Voir une autre catégorie:
             </p>
             <nav class="nav justify-content-center">
             <% @categories.each do |category| %>
-              <%=link_to category_path(category.id), class: "badge badge-pill badge-white-soft mr-1 mb-1" do%>
-                <span class="h6 text-uppercase"><%= category.name %></span>
+              <% if category != @category %>
+                <%=link_to category_path(category.id), class: "badge badge-pill badge-white-soft mr-1 mb-1" do%>
+                  <span class="h6 text-uppercase"><%= category.name %></span>
+                <%end%>
               <%end%>
             <% end %>
             </nav>

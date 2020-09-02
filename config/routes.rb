@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :kituis, only: [:index]
 
   resources :products, only: [:show, :index]
+  resources :categories, only: [:show]
   
   resources :users, only: [:show] do
     resources :carts, only: [:show]
