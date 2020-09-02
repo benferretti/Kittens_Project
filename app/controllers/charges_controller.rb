@@ -41,6 +41,9 @@ class ChargesController < ApplicationController
     
     Order.find(order.id).update(stripe_customer_id: customer.id)
     redirect_to user_path(@current_user)
+    @cart.destroy
+    @cart.create(user_id: current_user.id)
+    
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path
