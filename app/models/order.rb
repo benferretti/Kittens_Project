@@ -16,7 +16,9 @@ class Order < ApplicationRecord
 
   def order_confirmed
     OrderMailer.order_confirmed(self).deliver_now
+    puts 'order mailer before -----------------------'
     OrderMailer.new_order_admin(self).deliver_now
+    puts 'order mailer after -----------------------'
   end
 
 end

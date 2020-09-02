@@ -24,8 +24,10 @@ i = 0
   )
   i += 1
   puts "Seeding User #{user.email}"
-  User.find(2).update(is_admin: true)
 end
+
+User.find(1).update(is_admin: true)
+
 i = 0
 5.times do
   category = Category.create(
