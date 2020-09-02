@@ -97,9 +97,27 @@
       <tr>
         <td class="text-center"><strong>Total : <%= @total_price %> €</strong></td>
         <td colspan="2" class="hidden-xs"></td>
-        <td><button class="btn btn-success btn-pill btn-sm" title= "Passer ma commande">
-          <%= link_to "Payer", new_user_cart_charge_path(user_id: params[:user_id],cart_id: params[:id]), :class => "btn btn-success btn-pill btn-sm"  %>
-        </button></td>
+        <td>
+        <%= form_tag user_cart_charges_path(user_id: current_user.id, cart_id: params[:id]) do %>
+
+          <article>
+            <% if flash[:error].present? %>
+              <div id="error_explanation">
+                <p><%= flash[:error] %></p>
+              </div>
+            <% end %>
+          </article>
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="Finalisation de votre commande"
+                  data-amount=<%= @total_price * 100%>
+                  data-locale="fr"
+                  data-currency="EUR"
+                  data-panel-label="Payer"
+                  data-label="Payer par carte"></script>
+        <% end %>
+
+        </td>
       </tr>
     </tfoot>
 	</table>
