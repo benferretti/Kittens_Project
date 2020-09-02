@@ -4,10 +4,14 @@ class UsersController < ApplicationController
   
   def show
     @user = current_user
+    if current_user.is_admin
+    @products = ProductOrder.all
+    else
     @products = ProductOrder.where(order: Order.where(user: current_user))
+    end
   end
 
-  private 
+  private
 
   def is_owner?
     if current_user.id.to_i != params[:id].to_i

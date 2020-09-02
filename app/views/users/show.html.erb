@@ -55,7 +55,7 @@
           <div class="col-auto">
 
             <!-- Button -->
-            
+
             <%= link_to destroy_user_session_path, method: :delete do %>
               <button class="btn btn-sm btn-gray-300-20">
                 Déconnexion
@@ -122,7 +122,7 @@
               </div>
               <div class="card-body">
 
-              
+
                   <div class="row">
                     <div class="col-12 col-md-10">
                     <ul class="list-group list-group-flush mt-5">
@@ -134,7 +134,7 @@
                             Prénom <span class="ml-auto"><%= current_user.first_name %></span>
                           </h6>
                       </li>
-          
+
                       <li class="list-group-item">
 
                         <!-- Heading -->
@@ -199,7 +199,7 @@
                   <div class="list-group-item">
               </div>
             </div>
-          </div>  
+          </div>
         </div> <!-- / .row -->
       </div> <!-- / .container -->
     </main>
@@ -211,23 +211,27 @@
       <hr>
         <div class="row align-items-center mb-5">
           <div class="col-12 col-md">
-            
+
             <!-- Heading -->
             <h3 class="mb-0">
               Mes commandes
             </h3>
 
             <!-- Text -->
-            <p class="mb-0 text-muted">
-              Parcourir mes achats
-            </p>
+             <p class="mb-0 text-muted">
+               <%if current_user.is_admin%>
+                 Parcourir les achats
+               <%else%>
+                 Parcourir mes achats
+               <%end%>
+             </p>
 
           </div>
 
         </div> <!-- / .row -->
         <div class="row">
           <div class="col-12">
-            
+
             <!-- Card -->
             <div class="card card-row shadow-light-lg mb-6 rounded card lift lift-lg">
               <div class="row no-gutters">
@@ -255,14 +259,14 @@
                     <div class="w-100">
                       <!-- List group -->
                       <ul class="list-group list-group-flush mt-5">
-                        
+
                         <li class="list-group-item m-4">
                           <!-- Heading -->
                           <h5 class="d-flex mb-3 text-uppercase">
                             Commande n°<%=product.id%> <span class="ml-auto"><em><%=product.created_at.strftime("%d/%m/%Y")%></em></span>
                           </h5>
                         </li>
-                        
+
                         <li class="list-group-item m-4">
 
                           <!-- Heading -->
