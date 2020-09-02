@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   
   devise_for :users
 
-  resources :static_pages, only: [:index]
+  resources :static_pages, only: [:index], path: 'equipe'
   resources :kituis, only: [:index]
 
   resources :products, only: [:show, :index], path: 'articles'
