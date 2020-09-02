@@ -8,7 +8,7 @@ Our website on [heroku](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 
 ## Functionnalities
-__ Without an account you can: __
+__Without an account you can:__
 * See pictures on index page
 * Hover picture cards to have informations about them (name, price, description)
 * Check pictures in their show poage
@@ -16,6 +16,6 @@ __ Without an account you can: __
 * Check our UI kit with the link in the footer.
 * See two pictures of wonderful cats in the "Toujours plus de photos" footer's section  
 
-__ With an account you can: __
+__With an account you can:__
 
 <img src="https://media.tenor.com/images/bb33cc1eaafa266ac1092ecff7c1c85d/tenor.gif" >
