@@ -16,14 +16,22 @@
             </p>
 
             <!-- Badges -->
-            <hr class="border-gray-300 my-6">
+            <hr class="border-gray-300 my-6">   
             <p class="text-white-75 mt-5">
-              Parcourir les catégories:
+              Produits de la catégorie:
+            </p>         
+            <%=link_to category_path(@category.id), class: "badge badge-pill badge-white-soft mr-1 mb-1" do%>
+              <span class="h6 text-uppercase"><%= @category.name %></span>
+            <%end%>
+            <p class="text-white-75 mt-5">
+              Voir une autre catégorie:
             </p>
             <nav class="nav justify-content-center">
             <% @categories.each do |category| %>
-              <%=link_to category_path(category.id), class: "badge badge-pill badge-white-soft mr-1 mb-1" do%>
-                <span class="h6 text-uppercase"><%= category.name %></span>
+              <% if category != @category %>
+                <%=link_to category_path(category.id), class: "badge badge-pill badge-white-soft mr-1 mb-1" do%>
+                  <span class="h6 text-uppercase"><%= category.name %></span>
+                <%end%>
               <%end%>
             <% end %>
             </nav>
@@ -79,21 +87,25 @@
                           <%end%>
                           <hr>
                           <!-- Text -->
-                          <div class="mb-0 text-muted">
+                          <p class="mb-0 text-muted">
                             <h3><%=product.name %></h3>
                             <small>
                               <%= product.description %>
                             </small>
-                          </div>
+                          </p>
 
                         <!-- Ajouter au panier -->
                           <hr>
                           <p class="h5 text-uppercase text-muted mb-2 ml-auto">
                             <%= product.price %> €
-                              <%= link_to "Au panier !", product_carts_path(product_id: product.id), method: :post, class: 'btn btn-success btn-pill btn-sm ml-2 mr-3 text-light', remote: true %>
+                            <small>
+                              <%= link_to "Au panier !", product_carts_path(product_id: product.id), method: :post, class: 'btn btn-success btn-pill btn-sm ml-2 mr-3 text-light' %>
+                            </small>
+                            <small>
                               <%= link_to product_path(product.id), class: "btn btn-xs btn-rounded-circle btn-secondary ml-3", title: "Voir plus" do %>
                                 <%= image_tag "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn1.iconfinder.com%2Fdata%2Ficons%2Ftrycons%2F32%2Fsearch-512.png&f=1&nofb=1"%>
                               <%end%>
+                            </small>
                           </p>
                       </div>
                     </div>

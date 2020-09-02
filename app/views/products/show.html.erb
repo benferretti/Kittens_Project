@@ -17,9 +17,9 @@
           <aside class="py-8 py-md-10">
 
             <!-- Preheading -->
-            <span class="badge badge-pill badge-primary-soft mb-5">
+            <%= link_to category_path(@product.category.id), class: "badge badge-pill badge-primary-soft mb-2" do %>
               <span class="h6 text-uppercase font-weight-bold"><%= @product.category.name %></span>
-            </span>
+            <%end%>
 
             <!-- Text -->
             <p class="font-size-lg mb-7 text-muted">

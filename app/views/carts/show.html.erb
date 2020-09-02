@@ -59,11 +59,11 @@
               <div class="card-img-overlay card-img-overlay-hover">
                 <div class="card-body bg-white">
 
-              <!-- Preheading -->
-                    <span class="badge badge-pill badge-primary-soft mb-2">
-                      <span class="h6 text-uppercase font-weight-bold"><%= cart.product.category.name%></span>
-                    </span>
-                    <hr>
+                  <!-- Preheading -->
+                  <span class="badge badge-pill badge-primary-soft mb-2">
+                    <span class="h6 text-uppercase font-weight-bold"><%= cart.product.category.name%></span>
+                  </span>
+                  <hr>
 
               <div class="mb-0 text-muted">
                 <h3> <%= cart.product.name %> </h3>
@@ -71,7 +71,6 @@
                   <%= cart.product.description %>
                 </small>
               </div>
-
                 </div>
               </div>
 
@@ -99,7 +98,7 @@
         <td class="text-center"><strong>Total : <%= @total_price %> €</strong></td>
         <td colspan="2" class="hidden-xs"></td>
         <td><button class="btn btn-success btn-pill btn-sm" title= "Passer ma commande">
-          Payer
+          <%= link_to "Payer", new_user_cart_charge_path(user_id: params[:user_id],cart_id: params[:id]), :class => "btn btn-success btn-pill btn-sm"  %>
         </button></td>
       </tr>
     </tfoot>
