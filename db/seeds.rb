@@ -16,7 +16,7 @@ product_description_array = ["Obtenez l'élu de la force, il vous le rendra bien
 product_url_array = ['https://pictures.kitties.netlib.re/jirafeau/f.php?h=2TLxiIUc&p=1', 'https://pictures.kitties.netlib.re/jirafeau/f.php?h=2KxTsnGx&p=1', 'https://pictures.kitties.netlib.re/jirafeau/f.php?h=0f9Nuarn&p=1', 'https://pictures.kitties.netlib.re/jirafeau/f.php?h=2ZMwZfb2&p=1', 'https://pictures.kitties.netlib.re/jirafeau/f.php?h=3ZFIH5J6&p=1', 'https://pictures.kitties.netlib.re/jirafeau/f.php?h=1rlps3jQ&p=1', 'https://pictures.kitties.netlib.re/jirafeau/f.php?h=3GZD2LgA&p=1', 'https://pictures.kitties.netlib.re/jirafeau/f.php?h=20QJU3KK&p=1', 'https://pictures.kitties.netlib.re/jirafeau/f.php?h=0zSeNu13&p=1', 'https://pictures.kitties.netlib.re/jirafeau/f.php?h=0e8wsuE7&p=1', 'https://pictures.kitties.netlib.re/jirafeau/f.php?h=0Qg13gSe&p=1', 'https://pictures.kitties.netlib.re/jirafeau/f.php?h=1xRCHYnF&p=1', 'https://pictures.kitties.netlib.re/jirafeau/f.php?h=3X9KEFpi&p=1', 'https://pictures.kitties.netlib.re/jirafeau/f.php?h=27rzf9X3&p=1', 'https://pictures.kitties.netlib.re/jirafeau/f.php?h=22lWcdPZ&p=1', 'https://pictures.kitties.netlib.re/jirafeau/f.php?h=2vyirWzB&p=1', 'https://pictures.kitties.netlib.re/jirafeau/f.php?h=2LICskC7&p=1', 'https://pictures.kitties.netlib.re/jirafeau/f.php?h=1AcNTKA1&p=1', 'https://pictures.kitties.netlib.re/jirafeau/f.php?h=3I5jH3ES&p=1', 'https://pictures.kitties.netlib.re/jirafeau/f.php?h=1Uf_1wta&p=1']
 
 i = 0
-5.times do
+2.times do
   user = User.create(
     email: user_email_array[i],
     password: 'Azerty',
