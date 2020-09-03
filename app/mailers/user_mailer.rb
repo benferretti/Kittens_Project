@@ -1,5 +1,4 @@
 class UserMailer < ApplicationMailer
-  default from: 'kitties_project@protonmail.com'
 
   def send_new_user_message(user)
     @user = user

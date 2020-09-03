@@ -1,5 +1,4 @@
 class OrderMailer < ApplicationMailer
-  default from: 'kitties_project@protonmail.com'
 
   def order_confirmed(order)
 
