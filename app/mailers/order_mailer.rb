@@ -4,7 +4,7 @@ class OrderMailer < ApplicationMailer
 
     @order = Order.find(order.id)
     @user = User.find(@order.user_id)
-    @url  = 'https://kittens-project-develop.herokuapp.com/'
+    @url  = 'https://kittens-project.herokuapp.com/'
 
     # create an array with all products ordered
     @products_ordered = Array.new
@@ -17,7 +17,7 @@ class OrderMailer < ApplicationMailer
     @order = Order.find(order.id)
     @user = User.find(@order.user_id)
     @admin = User.find_by(is_admin: true)
-    @url  = 'https://kittens-project-develop.herokuapp.com/'
+    @url  = 'https://kittens-project.herokuapp.com/'
 
     # create an array with all products ordered
     @products_ordered = Array.new

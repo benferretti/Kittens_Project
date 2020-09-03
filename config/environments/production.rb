@@ -92,7 +92,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  #added 
-  config.action_mailer.default_url_options = { :host => 'kittens-proj-new-mailer-l5ew9x.herokuapp.com' }
+  #added
+  config.action_mailer.default_url_options = { :host => 'https://kittens-project.herokuapp.com/' }
   config.action_mailer.perform_deliveries = true # perform sending
 end
