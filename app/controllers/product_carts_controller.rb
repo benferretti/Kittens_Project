@@ -1,5 +1,4 @@
 class ProductCartsController < ApplicationController
-  before_filter :redirect_visitors
   before_action :authenticate_user!
 
   def new
@@ -38,20 +37,4 @@ class ProductCartsController < ApplicationController
     end
   end
 
-  def redirect_visitors
-    puts '-----------------'
-    if !current_user
-      respond_to do |format|
-        format.html {
-          puts 'html----------------------'
-          redirect_to new_user_session_path
-        }
-
-        format.js {
-          puts 'js ------------------------------'
-          redirect_to new_user_session_path
-        }
-      end
-    end
-  end
 end
