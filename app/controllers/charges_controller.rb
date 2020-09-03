@@ -40,7 +40,7 @@ class ChargesController < ApplicationController
     })
     
     Order.find(order.id).update(stripe_customer_id: customer.id)
-    @cart = Cart.where(user_id: current_user.id)t
+    @cart = Cart.where(user_id: current_user.id)
     @user_cart = ProductCart.where(cart: @cart)
     @user_cart.each do |product| ProductCart.find(product.id).destroy end
     redirect_to user_path(@current_user)
