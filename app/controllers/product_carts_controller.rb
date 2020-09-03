@@ -1,4 +1,5 @@
 class ProductCartsController < ApplicationController
+  before_filter :redirect_visitors
   before_action :authenticate_user!
 
   def new
@@ -19,6 +20,7 @@ class ProductCartsController < ApplicationController
     respond_to do |format|
       format.html {
         @productcart.save
+        redirect_to root_path
       }
 
       format.js {
@@ -33,6 +35,23 @@ class ProductCartsController < ApplicationController
     if @productcart.destroy
       flash[:success] = "Cette carte a bien été supprimée"
       redirect_to user_cart_path(Cart.find_by(user_id: current_user.id))
+    end
+  end
+
+  def redirect_visitors
+    puts '-----------------'
+    if !current_user
+      respond_to do |format|
+        format.html {
+          puts 'html----------------------'
+          redirect_to new_user_session_path
+        }
+
+        format.js {
+          puts 'js ------------------------------'
+          redirect_to new_user_session_path
+        }
+      end
     end
   end
 end
