@@ -54,8 +54,12 @@
             </ul>
 
           <!--Ajouter au panier-->
-          <%= link_to "Au panier !", product_carts_path(product_id: @product.id), method: :post, class: 'btn btn-success btn-pill btn-sm ml-2 mr-3 mt-5 text-light', remote: true %>
-          </aside>
+          <% if user_signed_in? %>
+          <%= link_to "Au panier !", product_carts_path(product_id: @product.id), method: :post, class: 'btn btn-success btn-pill btn-sm ml-2 mr-0 text-light', remote: true %>
+          <% else %>
+          <%= link_to "Au panier !", new_user_session_path, class: 'btn btn-success btn-pill btn-sm ml-2 mr-0 text-light' %>
+          <% end %>
+        </aside>
 
         </div>
       </div>

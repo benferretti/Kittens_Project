@@ -19,6 +19,7 @@ class ProductCartsController < ApplicationController
     respond_to do |format|
       format.html {
         @productcart.save
+        redirect_to root_path
       }
 
       format.js {
@@ -35,4 +36,5 @@ class ProductCartsController < ApplicationController
       redirect_to user_cart_path(Cart.find_by(user_id: current_user.id))
     end
   end
+
 end
